@@ -1,0 +1,18 @@
+name: 'Themis'
+description: 'An action for automating governance of Organization\n '
+inputs:
+  pat_token:
+    description: 'The Personal Access token used to call the API \nThis action required org admin previleges'
+    required: true
+  issue_body_json:
+    description: 'The JSON from the parsed issue body'
+    required: true  
+  issue_name:
+    description: 'The name of the issue template that created this form'
+    required: true  
+outputs:
+  status: # output will be available to future steps
+    description: 'The Status of a particular request'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
